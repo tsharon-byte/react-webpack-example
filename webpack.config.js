@@ -2,6 +2,7 @@ const path = require("path");
 const {CleanWebpackPlugin} = require('clean-webpack-plugin');
 const HtmlWebpackPlugin = require("html-webpack-plugin");
 const isDev = process.env.NODE_ENV === "development";
+const MiniCssExtractPlugin = require("mini-css-extract-plugin");
 console.log(isDev);
 module.exports = (isDevFlag = isDev) => ({
     mode: isDevFlag ? "development" : "production",
@@ -25,6 +26,13 @@ module.exports = (isDevFlag = isDev) => ({
                 use: {
                     loader: "babel-loader"
                 }
+            },
+            {
+                test: /\.css$/,
+                use: [
+                    'style-loader',
+                     'css-loader'
+                ]
             }
         ]
     }

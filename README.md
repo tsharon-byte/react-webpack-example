@@ -54,3 +54,18 @@ process.env.NODE_ENV==="development" - определяет в каком реж
    {"presets": ["@babel/preset-env", "@babel/preset-react"] }
 
 Минимальные настройки готовы для работы с React. В следующих версиях настрою css&other
+
+## CSS
+Загружаю необходимые лоадеры
+`npm i css-loader style-loader mini-css-extract-plugin -D`
+прописываю их для расширения css
+            `{
+                test: /\.css$/,
+                use: [
+                    'style-loader',
+                     'css-loader'
+                ]
+            }`
+### CASS
+
+## PNG
